@@ -9,8 +9,8 @@ class FoodController extends Controller
 {
     public function index()
     {
-         return view('food/all',[
-            "tittle" => "foods",
+        return view('food/all', [
+            "title" => "foods",
             "foods" => Food::all()
         ]);
     }
@@ -18,8 +18,8 @@ class FoodController extends Controller
     public function show(Food $food)
     {
         return view('food.detail', [
-            "tittle" => "detail-food",
-            "food" => $food 
+            "title" => "detail-food",
+            "food" => $food
         ]);
     }
 }

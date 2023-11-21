@@ -8,5 +8,5 @@
     <p>Temukan makanan dan minuman lezat untuk setiap selera!</p>
     <a href="{{ route('food.index') }}" class="btn btn-secondary">Lihat Menu Makanan</a>
     <a href="{{ route('drink.index') }}" class="btn btn-secondary">Lihat Menu Minuman</a>
-</main>
+    <a href="{{ route('dummy.index') }}" class="btn btn-secondary">Lihat Menu dummy</a>
 @endsection

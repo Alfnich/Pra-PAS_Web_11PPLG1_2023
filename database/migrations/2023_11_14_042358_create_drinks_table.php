@@ -11,18 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('drinks', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
-            $table->string('nama');
-            $table->text('deskripsi');
-            $table->unsignedInteger('harga');
-            $table->date('tgl_produksi');
-            $table->date('tgl_kadaluwarsa');
-            $table->json('bahan'); // Using json instead of text for bahan
-            $table->unsignedInteger('kalori');
-            $table->unsignedInteger('protein');
-            $table->timestamps();
+        Schema::table('drinks', function (Blueprint $table) {
+            $table->dropColumn('image');
         });
     }
 
@@ -31,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('drinks');
+        Schema::table('drinks', function (Blueprint $table) {
+            $table->string('image');
+        });
     }
 };

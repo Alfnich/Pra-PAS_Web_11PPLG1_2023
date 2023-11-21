@@ -10,15 +10,9 @@ return new class extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
             $table->string('nama');
             $table->text('deskripsi');
             $table->unsignedInteger('harga');
-            $table->date('tgl_produksi');
-            $table->date('tgl_kadaluwarsa');
-            $table->json('bahan'); // Using json instead of text for bahan
-            $table->unsignedInteger('kalori');
-            $table->unsignedInteger('protein');
             $table->timestamps();
         });
     }

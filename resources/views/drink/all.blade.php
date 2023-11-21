@@ -10,18 +10,18 @@ $no = 1;
     <thead>
       <tr>
         <th scope="col">No</th>
-        <th scope="col">Gambar</th>
         <th scope="col">Nama Minuman</th>
+        <th scope="col">Deskripsi</th>
         <th scope="col">Harga</th>
-        <th scope="col">Aksi</th>
+        <th scope="col">Tombol</th>
       </tr>
     </thead>
     <tbody>
       @foreach($drinks as $drink)
         <tr>
           <td>{{$no++}}</td>
-          <td><img src="{{ URL('img/' . $drink->image) }}" style="width: 120px; height: 100px;"  class="img-thumbnail"></td>
           <td>{{$drink->nama}}</td>
+          <td>{{$drink->deskripsi}}</td>
           <td>Rp.{{$drink->harga}}</td>
           <td>
             <a href="{{ route('drink.show', ['drink' => $drink]) }}" class="btn btn-primary">
